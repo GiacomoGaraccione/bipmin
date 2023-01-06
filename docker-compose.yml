@@ -1,0 +1,24 @@
+version: "3"
+services:
+
+  server:
+    image: "server"
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3001:3001"
+    volumes:
+      - data:/src
+
+  client:
+    image: "client"
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+volumes:
+  data:

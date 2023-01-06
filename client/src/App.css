@@ -1,0 +1,123 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bjsl-button {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.greenColor {
+  color: rgb(48, 190, 48) !important;
+}
+
+.goldColor {
+  color: rgb(236, 202, 10);
+}
+
+.whiteColor {
+  color: white
+}
+
+.greenBackground {
+  background-color: rgb(48, 190, 48);
+}
+
+.btn-success {
+  background: rgb(48, 190, 48) !important;
+  color: white !important;
+}
+
+.btn-outline-primary {
+  color: black !important;
+  border-color: dimgray !important;
+}
+
+.btn-outline-dark:hover {
+  background: rgb(48, 190, 48) !important;
+  color: white !important;
+}
+
+.progress-bar {
+  background: rgb(48, 190, 48) !important;
+}
+
+.accordion-button:focus {
+  background: rgb(238, 238, 238) !important;
+  color:rgb(73, 73, 73) !important;
+  box-shadow: inset 0 1px 2px rgb(73, 73, 73), 0 1px 3px rgb(73, 73, 73) !important;
+  font-weight: 600 !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background: rgb(231, 235, 231) !important;
+  color: black !important;
+}
+
+.accordion-button:after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.nav-tabs .nav-link{
+  color: rgb(48, 190, 48);
+}
+
+.nav-tabs .nav-link:hover{
+  color: white;
+  background-color: rgb(48, 190, 48);
+}
+
+.card {
+  border-color: white !important;
+}
+
+.avatar:hover {
+  border-color: dimgray !important;
+  /*color: rgb(48, 190, 48) !important;*/
+}
+
+.avatarButton {
+  border-radius: 40px !important;
+  border: none !important;
+  background: none !important;
+}
+
+.avatarButton:focus {
+  border-radius: 40px !important; 
+  border: rgb(48, 190, 48) !important;
+}
