@@ -76,13 +76,13 @@ app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
 
-
+let baseURL = "/api/" //"https://softeng.polito.it/bipmin-server/"
 
 /*** APIs ***/
 
 // GET /api/diagram/resources/<filename>
 //app.get('/api/diagrams/:userId/:exerciseId', async (req, res) => {
-app.get('/api/diagram/resources/:filename', async (req, res) => {
+app.get(baseURL + 'diagram/resources/:filename', async (req, res) => {
   const userId = req.params.userId
   const exerciseId = req.params.exerciseId
 
@@ -106,7 +106,7 @@ app.get('/api/diagram/resources/:filename', async (req, res) => {
 });
 
 // GET /resources/<filename>
-app.get('/resources/:filename', async (req, res) => {
+app.get(baseURL + 'resources/:filename', async (req, res) => {
   const filename = '/resources/' + req.params.filename;
   try {
     res.contentType('image/svg+xml');
@@ -117,7 +117,7 @@ app.get('/resources/:filename', async (req, res) => {
 });
 
 // GET /api/exercise/<part>/<place>
-app.get('/api/exercises/:exNum', async (req, res) => {
+app.get(baseURL + 'exercises/:exNum', async (req, res) => {
   const exNum = req.params.exNum
   try {
     let exercise = await dao.getExercise(exNum);
@@ -132,14 +132,14 @@ app.get('/api/exercises/:exNum', async (req, res) => {
 });
 
 // GET /api/exercises get all exercises
-app.get('/api/exercises', async (req, res) => {
+app.get(baseURL + 'exercises', async (req, res) => {
   dao.listExercises()
     .then(exercises => res.json(exercises))
     .catch((err) => { console.log(err); res.status(500).end() });
 })
 
 // POST /api/exercise
-app.post('/api/exercise', [ //isLoggedIn, 
+app.post(baseURL + 'exercise', [ //isLoggedIn, 
   check('part').isInt({ min: 1 }),
   check('place').isInt({ min: 1 }),
   check('title').isLength({ min: 1 }),
@@ -173,7 +173,7 @@ app.post('/api/exercise', [ //isLoggedIn,
 });
 
 // PUT /api/exercise/<part>/<place>
-app.put('/api/exercise/:part/:place', [
+app.put(baseURL + 'exercise/:part/:place', [
   check('title').isLength({ min: 1 }),
   check('description').isLength({ min: 1 }),
   check('diagram').isLength({ min: 1 }),
@@ -210,7 +210,7 @@ app.put('/api/exercise/:part/:place', [
 /*** Progress APIs ***/
 
 // GET /api/progress/<user>
-app.get('/api/progress/:user', async (req, res) => {
+app.get(baseURL + 'progress/:user', async (req, res) => {
   const user = req.params.user;
   try {
     let progress = await dao.getProgress(user);
@@ -225,14 +225,14 @@ app.get('/api/progress/:user', async (req, res) => {
 });
 
 // GET /api/progresses
-app.get('/api/progresses', async (_, res) => {
+app.get(baseURL + 'progresses', async (_, res) => {
   dao.listProgresses()
     .then(progressList => res.json(progressList))
     .catch((err) => { console.log(err); res.status(500).end() });
 });
 
 // PUT /api/progress/<user>
-app.put('/api/progress/:user', [], async (req, res) => {
+app.put(baseURL + 'progress/:user', [], async (req, res) => {
 
   const user = parseInt(req.params.user);
   const progress = {
@@ -255,14 +255,14 @@ app.put('/api/progress/:user', [], async (req, res) => {
 /*** Users APIs ***/
 
 // GET /api/users
-app.get('/api/users', async (_, res) => {
+app.get(baseURL + 'users', async (_, res) => {
   dao.listUsers()
     .then(usersList => res.json(usersList))
     .catch((err) => { console.log(err); res.status(500).end() });
 });
 
 // GET /api/user/<user>
-app.get('/api/user/:user', async (req, res) => {
+app.get(baseURL + 'user/:user', async (req, res) => {
   const userIn = req.params.user;
   try {
     let user = await dao.getUserById(userIn);
@@ -277,7 +277,7 @@ app.get('/api/user/:user', async (req, res) => {
 });
 
 // PUT /api/user/<user>
-app.put('/api/user/:user', [], async (req, res) => {
+app.put(baseURL + 'user/:user', [], async (req, res) => {
 
   const id = parseInt(req.params.user);
   const user = {
@@ -296,7 +296,7 @@ app.put('/api/user/:user', [], async (req, res) => {
 });
 
 // POST /api/user
-app.post('/api/user', [], async (req, res) => {
+app.post(baseURL + 'user', [], async (req, res) => {
   console.log(req.body)
   const user = {
     email: req.body.email,
@@ -313,7 +313,7 @@ app.post('/api/user', [], async (req, res) => {
   }
 });
 
-app.get("/api/rules/:userId/:exerciseId", async (req, res) => {
+app.get(baseURL + "rules/:userId/:exerciseId", async (req, res) => {
   const userId = req.params.userId
   const exerciseId = req.params.exerciseId
   try {
@@ -328,7 +328,7 @@ app.get("/api/rules/:userId/:exerciseId", async (req, res) => {
   }
 })
 
-app.get("/api/rules/:exerciseId", async (req, res) => {
+app.get(baseURL + "rules/:exerciseId", async (req, res) => {
   const exerciseId = req.params.exerciseId
   try {
     let rules = await dao.getRules(exerciseId)
@@ -342,7 +342,7 @@ app.get("/api/rules/:exerciseId", async (req, res) => {
   }
 })
 
-app.put("/api/rules/:userId/:exerciseId", async (req, res) => {
+app.put(baseURL + "rules/:userId/:exerciseId", async (req, res) => {
   const userId = req.params.userId
   const exerciseId = req.params.exerciseId
   const progress = req.body.progress
@@ -356,7 +356,7 @@ app.put("/api/rules/:userId/:exerciseId", async (req, res) => {
   }
 })
 
-app.put("/api/points/:userId/:exerciseId", async (req, res) => {
+app.put(baseURL + "points/:userId/:exerciseId", async (req, res) => {
   const userId = req.params.userId
   const exerciseId = req.params.exerciseId
   const rule = req.body.rule
@@ -370,7 +370,7 @@ app.put("/api/points/:userId/:exerciseId", async (req, res) => {
   }
 })
 
-app.put("/api/grades/:userId/:exerciseId", async (req, res) => {
+app.put(baseURL + "grades/:userId/:exerciseId", async (req, res) => {
   const userId = req.params.userId
   const exerciseId = req.params.exerciseId
   const penalty = req.body.penalty
@@ -384,7 +384,7 @@ app.put("/api/grades/:userId/:exerciseId", async (req, res) => {
   }
 })
 
-app.post("/api/attempts/:userId/:exerciseId", async (req, res) => {
+app.post(baseURL + "attempts/:userId/:exerciseId", async (req, res) => {
   const userId = req.params.userId
   const exerciseId = req.params.exerciseId
   const body = req.body
@@ -398,7 +398,7 @@ app.post("/api/attempts/:userId/:exerciseId", async (req, res) => {
   }
 })
 
-app.get("/api/attempts/:userId/:exerciseId", async (req, res) => {
+app.get(baseURL + "attempts/:userId/:exerciseId", async (req, res) => {
   const userId = req.params.userId
   const exerciseId = req.params.exerciseId
 
@@ -414,7 +414,7 @@ app.get("/api/attempts/:userId/:exerciseId", async (req, res) => {
   }
 })
 
-app.put("/api/diagrams/:userId/:exerciseId", async (req, res) => {
+app.put(baseURL + "diagrams/:userId/:exerciseId", async (req, res) => {
   const userId = req.params.userId
   const exerciseId = req.params.exerciseId
   const diagram = req.body.diagram
@@ -428,7 +428,7 @@ app.put("/api/diagrams/:userId/:exerciseId", async (req, res) => {
   }
 })
 
-app.get("/api/scores/:userId/:exerciseId", async (req, res) => {
+app.get(baseURL + "scores/:userId/:exerciseId", async (req, res) => {
   const userId = req.params.userId
   const exerciseId = req.params.exerciseId
 
@@ -444,7 +444,7 @@ app.get("/api/scores/:userId/:exerciseId", async (req, res) => {
   }
 })
 
-app.put("/api/pieces/:userId/:exerciseId", async (req, res) => {
+app.put(baseURL + "pieces/:userId/:exerciseId", async (req, res) => {
   const userId = req.params.userId
   const exerciseId = req.params.exerciseId
   const newSpent = req.body.newSpent
@@ -459,7 +459,7 @@ app.put("/api/pieces/:userId/:exerciseId", async (req, res) => {
   }
 })
 
-app.post("/api/timestamps/:userId", async (req, res) => {
+app.post(baseURL + "timestamps/:userId", async (req, res) => {
   const exerciseNumber = req.body.exerciseNumber
 
   try {
@@ -471,7 +471,7 @@ app.post("/api/timestamps/:userId", async (req, res) => {
   }
 })
 
-app.get("/api/timestamps/:userId/:exerciseNumber", async (req, res) => {
+app.get(baseURL + "timestamps/:userId/:exerciseNumber", async (req, res) => {
   try {
     let timeout = await dao.getTimeout(req.params.userId, req.params.exerciseNumber)
     if (timeout.error) {
@@ -484,7 +484,7 @@ app.get("/api/timestamps/:userId/:exerciseNumber", async (req, res) => {
   }
 })
 
-app.post("/api/files", async (req, res) => {
+app.post(baseURL + "files", async (req, res) => {
   try {
     await dao.loadFile(req.body.content)
     res.status(200).end()
@@ -496,7 +496,7 @@ app.post("/api/files", async (req, res) => {
 
 // POST /sessions 
 // login
-app.post('/api/sessions', function (req, res, next) {
+app.post(baseURL + 'sessions', function (req, res, next) {
   passport.authenticate('local', (err, user, info) => {
     if (err)
       return next(err);
@@ -518,13 +518,13 @@ app.post('/api/sessions', function (req, res, next) {
 
 // DELETE /api/sessions/current 
 // logout
-app.delete('/api/sessions/current', (req, res) => {
+app.delete(baseURL + 'sessions/current', (req, res) => {
   req.logout(() => res.end());
 });
 
 // GET /api/sessions/current
 // check whether the user is logged in or not
-app.get('/api/sessions/current', (req, res) => {
+app.get(baseURL + 'sessions/current', (req, res) => {
   if (req.isAuthenticated()) {
     res.status(200).json(req.user);
   }

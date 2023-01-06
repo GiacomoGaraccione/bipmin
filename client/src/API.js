@@ -1,10 +1,11 @@
 /**
  * All the API calls
  */
+let baseURL = "https://softeng.polito.it/bipmin-server/" // /api/
 
 //GET /api/diagram/resources/<filename>
 async function getDiagram(filename/*userId, exerciseId*/) {
-  const response = await fetch(`/api/diagram/resources/${filename}`)
+  const response = await fetch(baseURL + `diagram/resources/${filename}`)
   //const response = await fetch(`/api/diagrams/${userId}/${exerciseId}`);
   if (!response.ok)
     throw new Error(response.statusText);
@@ -13,7 +14,7 @@ async function getDiagram(filename/*userId, exerciseId*/) {
 }
 
 async function getExercise(exNum) {
-  const response = await fetch(`/api/exercises/${exNum}`);
+  const response = await fetch(baseURL + `exercises/${exNum}`);
   if (!response.ok)
     throw new Error(response.statusText);
   const exercise = await response.json();
@@ -21,7 +22,7 @@ async function getExercise(exNum) {
 }
 
 async function listExercises() {
-  const response = await fetch('/api/exercises');
+  const response = await fetch(baseURL + 'exercises');
   if (!response.ok)
     throw new Error(response.statusText);
   const exercises = await response.json();
@@ -29,7 +30,7 @@ async function listExercises() {
 }
 
 async function getProgress(user) {
-  const response = await fetch(`/api/progress/${user}`);
+  const response = await fetch(baseURL + `progress/${user}`);
   if (!response.ok)
     throw new Error(response.statusText);
   const progress = await response.json();
@@ -37,7 +38,7 @@ async function getProgress(user) {
 }
 
 async function listProgresses() {
-  const response = await fetch('/api/progresses');
+  const response = await fetch(baseURL + 'progresses');
   if (!response.ok)
     throw new Error(response.statusText);
   const progresses = await response.json();
@@ -45,7 +46,7 @@ async function listProgresses() {
 }
 
 async function getUserRules(userId, exerciseId) {
-  const response = await fetch(`/api/rules/${userId}/${exerciseId}`)
+  const response = await fetch(baseURL + `rules/${userId}/${exerciseId}`)
   if (!response.ok) {
     throw new Error(response.statusText)
   }
@@ -54,7 +55,7 @@ async function getUserRules(userId, exerciseId) {
 }
 
 async function unlockRule(userId, exerciseId, progress) {
-  let response = await fetch(`/api/rules/${userId}/${exerciseId}`, {
+  let response = await fetch(baseURL + `rules/${userId}/${exerciseId}`, {
     method: "put",
     headers: {
       "Content-Type": "application/json",
@@ -73,7 +74,7 @@ async function unlockRule(userId, exerciseId, progress) {
 }
 
 async function increasePoints(userId, exerciseId, rule) {
-  let response = await fetch(`/api/points/${userId}/${exerciseId}`, {
+  let response = await fetch(baseURL + `points/${userId}/${exerciseId}`, {
     method: "put",
     headers: {
       "Content-Type": "application/json",
@@ -94,7 +95,7 @@ async function increasePoints(userId, exerciseId, rule) {
 }
 
 async function recordAttempt(userId, exerciseId, mode, errors, rules, diagram, success) {
-  let response = await fetch(`/api/attempts/${userId}/${exerciseId}`, {
+  let response = await fetch(baseURL + `attempts/${userId}/${exerciseId}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -113,7 +114,7 @@ async function recordAttempt(userId, exerciseId, mode, errors, rules, diagram, s
 }
 
 async function getAttemptNumber(userId, exerciseId) {
-  const response = await fetch(`/api/attempts/${userId}/${exerciseId}`)
+  const response = await fetch(baseURL + `attempts/${userId}/${exerciseId}`)
   if (!response.ok) {
     throw new Error(response.statusText)
   }
@@ -122,7 +123,7 @@ async function getAttemptNumber(userId, exerciseId) {
 }
 
 async function getRules(exerciseId) {
-  const response = await fetch(`/api/rules/${exerciseId}`)
+  const response = await fetch(baseURL + `rules/${exerciseId}`)
   if (!response.ok) {
     throw new Error(response.statusText)
   }
@@ -131,7 +132,7 @@ async function getRules(exerciseId) {
 }
 
 async function getScore(userId, exerciseId) {
-  const response = await fetch(`/api/scores/${userId}/${exerciseId}`)
+  const response = await fetch(baseURL + `scores/${userId}/${exerciseId}`)
   if (!response.ok) {
     throw new Error(response.statusText)
   }
@@ -140,7 +141,7 @@ async function getScore(userId, exerciseId) {
 }
 
 async function buyPieces(userId, exerciseId, newSpent, newScore) {
-  let response = await fetch(`/api/pieces/${userId}/${exerciseId}`, {
+  let response = await fetch(baseURL + `pieces/${userId}/${exerciseId}`, {
     method: 'put',
     headers: {
       'Content-Type': 'application/json',
@@ -159,7 +160,7 @@ async function buyPieces(userId, exerciseId, newSpent, newScore) {
 }
 
 async function reduceGrade(userId, exerciseId, penalty) {
-  let response = await fetch(`/api/grades/${userId}/${exerciseId}`, {
+  let response = await fetch(baseURL + `grades/${userId}/${exerciseId}`, {
     method: 'put',
     headers: {
       'Content-Type': 'application/json',
@@ -178,7 +179,7 @@ async function reduceGrade(userId, exerciseId, penalty) {
 }
 
 async function saveDiagram(userId, exerciseId, diagram) {
-  let response = await fetch(`/api/diagrams/${userId}/${exerciseId}`, {
+  let response = await fetch(baseURL + `diagrams/${userId}/${exerciseId}`, {
     method: "put",
     headers: {
       "Content-Type": "application/json"
@@ -197,7 +198,7 @@ async function saveDiagram(userId, exerciseId, diagram) {
 }
 
 async function updateProgress(progress) {
-  let response = await fetch(`/api/progress/${progress.userid}`, {
+  let response = await fetch(baseURL + `progress/${progress.userid}`, {
     method: 'put',
     headers: {
       'Content-Type': 'application/json',
@@ -216,7 +217,7 @@ async function updateProgress(progress) {
 }
 
 async function listUsers() {
-  const response = await fetch('/api/users');
+  const response = await fetch(baseURL + 'users');
   if (!response.ok)
     throw new Error(response.statusText);
   const users = await response.json();
@@ -224,7 +225,7 @@ async function listUsers() {
 }
 
 async function getUser(ui) {
-  const response = await fetch(`/api/user/${ui}`);
+  const response = await fetch(baseURL + `user/${ui}`);
   if (!response.ok)
     throw new Error(response.statusText);
   const user = await response.json();
@@ -232,7 +233,7 @@ async function getUser(ui) {
 }
 
 async function updateAvatar(user) {
-  let response = await fetch(`/api/user/${user.id}`, {
+  let response = await fetch(baseURL + `user/${user.id}`, {
     method: 'put',
     headers: {
       'Content-Type': 'application/json',
@@ -251,7 +252,7 @@ async function updateAvatar(user) {
 }
 
 async function addTimestamp(userId, exerciseNumber) {
-  let response = await fetch(`/api/timestamps/${userId}/`, {
+  let response = await fetch(baseURL + `timestamps/${userId}/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -270,7 +271,7 @@ async function addTimestamp(userId, exerciseNumber) {
 }
 
 async function getTimeout(userId, exerciseNumber) {
-  const response = await fetch(`/api/timestamps/${userId}/${exerciseNumber}`)
+  const response = await fetch(baseURL + `timestamps/${userId}/${exerciseNumber}`)
   if (!response.ok)
     throw new Error(response.statusText);
   const timeout = await response.json();
@@ -278,7 +279,7 @@ async function getTimeout(userId, exerciseNumber) {
 }
 
 async function loadFile(content) {
-  let response = await fetch("/api/files", {
+  let response = await fetch(baseURL + "files", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -301,7 +302,7 @@ async function loadFile(content) {
  */
 
 async function logIn(credentials) {
-  let response = await fetch(`/api/sessions`, {
+  let response = await fetch(baseURL + `sessions`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -324,11 +325,11 @@ async function logIn(credentials) {
 }
 
 async function logOut() {
-  await fetch('/api/sessions/current', { method: 'DELETE' });
+  await fetch(baseURL + 'sessions/current', { method: 'DELETE' });
 }
 
 async function getUserInfo() {
-  const response = await fetch('/api/sessions/current');
+  const response = await fetch(baseURL + 'sessions/current');
   const userInfo = await response.json();
   if (response.ok) {
     return userInfo;
