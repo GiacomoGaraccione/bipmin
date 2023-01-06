@@ -67,11 +67,11 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router basename="https://softeng.polito.it/bipmin/">
       <Row className="App">
         <NavBar loggedIn={loggedIn} logout={doLogOut} user={user} />
         {apiErrorMessage ? <Alert variant='danger' className="mt-2">{apiErrorMessage}</Alert> :
-          <Routes basename="https://softeng.polito.it/bipmin/bipmin">
+          <Routes>
 
             <Route exact path="/" element={
               <>{loggedIn ?
