@@ -15,8 +15,9 @@ ENV PATH /src/node_modules/.bin:$PATH
 COPY package.json src/package.json
 
 RUN npm install 
+RUN npm run build --env.PUBLIC_URL="/bipmin"
 
 EXPOSE 3000
 
 # start app
-CMD npm run build --env.PUBLIC_URL="/bipmin" && npm start
+CMD npm start
