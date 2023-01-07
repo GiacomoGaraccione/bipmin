@@ -19,4 +19,4 @@ RUN npm install
 EXPOSE 3000
 
 # start app
-CMD npm run build
+CMD npm run build --env.PUBLIC_URL="/bipmin"; npm start

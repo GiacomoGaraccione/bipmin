@@ -1,7 +1,7 @@
 /**
  * All the API calls
  */
-let baseURL = "https://softeng.polito.it/bipmin-server/" // /api/
+let baseURL = "https://softeng.polito.it/bipmin-server/api/" // /api/
 
 //GET /api/diagram/resources/<filename>
 async function getDiagram(filename/*userId, exerciseId*/) {
