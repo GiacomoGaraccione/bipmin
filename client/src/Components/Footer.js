@@ -1,4 +1,4 @@
-import { Button, Col, Row, Modal } from "react-bootstrap";
+import { Button, Col, Row, Modal, Alert } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import API from '../API'
 import ModifiedWarningModal from "./ModifiedWarningModal";
@@ -20,6 +20,7 @@ function Footer(props) {
     const [xml, setXml] = useState("")
     const [success, setSuccess] = useState(false)
     const [attempt, setAttempt] = useState(0)
+    const [timeout, setTimeout] = useState(false)
 
     const updateFailedRules = (error) => {
         setFailedRules((prev) => [...prev, error])
@@ -33,6 +34,16 @@ function Footer(props) {
     const updateUnlockedRules = (rule) => {
         setUnlockedRules((prev) => [...prev, rule])
     }
+
+    useEffect(() => {
+        setInterval(() => {
+            API.getTimeout(props.user.id, props.exNum).then((timeout) => {
+                if (timeout) {
+                    setTimeout(true)
+                }
+            })
+        }, 60000)
+    })
 
     useEffect(() => {
         setRules(props.exercise ? JSON.parse(props.exercise.rules) : "")
@@ -360,6 +371,14 @@ function Footer(props) {
     }
 
     return (<>
+        <Row>
+            <Col></Col>
+            <Col>{timeout && <Alert variant="danger">Timeout reached. Please submit your final attempt by checking the syntax/correctness of your solution.</Alert>}
+                {(((props.user.version % 2 === 1 && props.exNum === 2) ||
+                    (props.user.version % 2 === 0 && props.exNum === 1)) && !timeout) && <Alert variant="success">Number of attempts left for correctness check: {3 - attempt}</Alert>}
+            </Col>
+            <Col></Col>
+        </Row>
         <Row>
             <Col>
             </Col>

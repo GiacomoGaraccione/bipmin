@@ -444,3 +444,55 @@ exports.loadFile = (content) => {
     })
   })
 }
+
+exports.getScores = () => {
+  return new Promise((resolve, reject) => {
+    const sql = "SELECT users.name, scores.exerciseId, scores.points, scores.spent, scores.grade FROM users, scores WHERE users.id = scores.userId ORDER BY users.id"
+    db.all(sql, [], (err, rows) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(rows)
+      }
+    })
+  })
+}
+
+exports.getRulesFound = () => {
+  return new Promise((resolve, reject) => {
+    const sql = "SELECT users.name, userRules.exerciseId, userRules.progress FROM users, userRules WHERE users.id = userRules.userId ORDER BY users.id"
+    db.all(sql, [], (err, rows) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(rows)
+      }
+    })
+  })
+}
+
+exports.getAttempts = () => {
+  return new Promise((resolve, reject) => {
+    const sql = "SELECT users.name, attempts.exerciseId, attempts.attempt, attempts.mode, attempts.errors, attempts.rules, attempts.diagram, attempts.success, attempts.timestamp, users.version FROM users, attempts WHERE users.id = attempts.userId ORDER BY users.id, attempts.mode"
+    db.all(sql, [], (err, rows) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(rows)
+      }
+    })
+  })
+}
+
+exports.getTimestamps = () => {
+  return new Promise((resolve, reject) => {
+    const sql = "SELECT users.name, timestamps.exerciseNumber, timestamps.timestamp FROM users, timestamps WHERE users.id = timestamps.userId ORDER BY users.id"
+    db.all(sql, [], (err, rows) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(rows)
+      }
+    })
+  })
+}

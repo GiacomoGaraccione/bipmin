@@ -494,6 +494,58 @@ app.post(baseURL + "files", async (req, res) => {
   }
 })
 
+app.get(baseURL + "logs/scores", async (req, res) => {
+  try {
+    let scores = await dao.getScores()
+    if (scores.error) {
+      res.status(404).json(scores);
+    } else {
+      res.json(scores);
+    }
+  } catch (err) {
+    res.status(500).end();
+  }
+})
+
+app.get(baseURL + "logs/rules", async (req, res) => {
+  try {
+    let rules = await dao.getRulesFound()
+    if (rules.error) {
+      res.status(404).json(rules);
+    } else {
+      res.json(rules);
+    }
+  } catch (err) {
+    res.status(500).end();
+  }
+})
+
+app.get(baseURL + "logs/attempts", async (req, res) => {
+  try {
+    let attempts = await dao.getAttempts()
+    if (attempts.error) {
+      res.status(404).json(attempts);
+    } else {
+      res.json(attempts);
+    }
+  } catch (err) {
+    res.status(500).end();
+  }
+})
+
+app.get(baseURL + "logs/timestamps", async (req, res) => {
+  try {
+    let timestamps = await dao.getTimestamps()
+    if (timestamps.error) {
+      res.status(404).json(timestamps);
+    } else {
+      res.json(timestamps);
+    }
+  } catch (err) {
+    res.status(500).end();
+  }
+})
+
 // POST /sessions 
 // login
 app.post(baseURL + 'sessions', function (req, res, next) {

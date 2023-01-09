@@ -5,7 +5,7 @@ import "bpmn-js/dist/assets/diagram-js.css";
 import "bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css";
 import 'bpmn-js-bpmnlint/dist/assets/css/bpmn-js-bpmnlint.css';
 import NavBar from './Components/NavBar';
-import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, Navigate, HashRouter } from 'react-router-dom';
 //import ProgressVersion from './Components/legacy/ProgressVersion';
 //import CompetitionVersion from './Components/CompetitionVersion';
 //import RewardVersion from './Components/RewardVersion';
@@ -21,6 +21,7 @@ function App() {
   const [apiErrorMessage, setApiErrorMessage] = useState('');
   const [timeout1, setTimeout1] = useState(false)
   const [timeout2, setTimeout2] = useState(false)
+  const [mode, setMode] = useState("")
 
   // Authentication check
   useEffect(() => {
@@ -29,12 +30,12 @@ function App() {
         await API.getUserInfo().then(u => {
           setUser(u)
           setLoggedIn(true);
-          API.getTimeout(u.id, 1).then((timeout) => {
+          /*API.getTimeout(u.id, 1).then((timeout) => {
             setTimeout1(timeout)
           })
           API.getTimeout(u.id, 2).then((timeout) => {
             setTimeout2(timeout)
-          })
+          })*/
         }).catch(err => {
           console.error(err);
         });
@@ -69,23 +70,34 @@ function App() {
   return (
     <Router basename="/bipmin">
       <Row className="App">
-        <NavBar loggedIn={loggedIn} logout={doLogOut} user={user} />
+        <NavBar loggedIn={loggedIn} logout={doLogOut} user={user} setMode={setMode} />
         {apiErrorMessage ? <Alert variant='danger' className="mt-2">{apiErrorMessage}</Alert> :
           <Routes>
 
-            <Route exact path="/" element={
+            <Route path="/" element={
               <>{loggedIn ?
-                <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh', }}>
-
-                  <Col xs={6}>
-                    <Button variant="outline-dark" href="/exercise1" component={Link} onClick={() => API.addTimestamp(user.id, 1)} disabled={timeout1}>
-                      Exercise 1</Button>
-                  </Col>
-                  <Col xs={6}>
-                    <Button variant="outline-dark" href="/exercise2" component={Link} onClick={() => API.addTimestamp(user.id, 2)} disabled={timeout2} >
-                      Exercise 2</Button>
-                  </Col>
-                </Container>
+                <>
+                  {mode === "" &&
+                    <>
+                      <Col xs={6}>
+                        <Button variant="outline-dark" onClick={() => {
+                          API.addTimestamp(user.id, 1)
+                          setMode("ex1")
+                        }} disabled={timeout1}>
+                          Exercise 1</Button>
+                      </Col>
+                      <Col xs={6}>
+                        <Button variant="outline-dark" onClick={() => {
+                          API.addTimestamp(user.id, 2)
+                          setMode("ex2")
+                        }} disabled={timeout2} >
+                          Exercise 2</Button>
+                      </Col>
+                    </>}
+                  {mode === "ex1" && <Exercise user={user} exNum={1}></Exercise>}
+                  {mode === "ex2" && <Exercise user={user} exNum={2}></Exercise>}
+                  {mode === "admin" && <AdminPage user={user}></AdminPage>}
+                </>
                 : <Navigate to="/login" />
               }</>
             } />

@@ -39,6 +39,58 @@ function AdminPage(props) {
             .then(() => setSelectedFile(""));
     }
 
+    const getScores = () => {
+        API.getScores().then((scores) => {
+            let csv = Papa.unparse(scores)
+            const blob = new Blob([csv])
+            const a = document.createElement("a")
+            a.href = URL.createObjectURL(blob, { type: "text/plain" })
+            a.download = "Log - Scores"
+            document.body.appendChild(a)
+            a.click()
+            document.body.removeChild(a)
+        })
+    }
+
+    const getRules = () => {
+        API.getRulesFound().then((rules) => {
+            let csv = Papa.unparse(rules)
+            const blob = new Blob([csv])
+            const a = document.createElement("a")
+            a.href = URL.createObjectURL(blob, { type: "text/plain" })
+            a.download = "Log - Rules"
+            document.body.appendChild(a)
+            a.click()
+            document.body.removeChild(a)
+        })
+    }
+
+    const getAttempts = () => {
+        API.getAttempts().then((attempts) => {
+            let csv = Papa.unparse(attempts)
+            const blob = new Blob([csv])
+            const a = document.createElement("a")
+            a.href = URL.createObjectURL(blob, { type: "text/plain" })
+            a.download = "Log - Attempts"
+            document.body.appendChild(a)
+            a.click()
+            document.body.removeChild(a)
+        })
+    }
+
+    const getTimestamps = () => {
+        API.getTimestamps().then((timestamps) => {
+            let csv = Papa.unparse(timestamps)
+            const blob = new Blob([csv])
+            const a = document.createElement("a")
+            a.href = URL.createObjectURL(blob, { type: "text/plain" })
+            a.download = "Log - Timestamps"
+            document.body.appendChild(a)
+            a.click()
+            document.body.removeChild(a)
+        })
+    }
+
     return (
         <>
             <h3>Select a file to load data into the system </h3>
@@ -54,6 +106,19 @@ function AdminPage(props) {
             </div>
             <Col>
                 <Button onClick={onSubmit} disabled={(selectedFile === "")}>Upload!</Button>
+            </Col>
+            <h3>Download data</h3>
+            <Col>
+                <Button onClick={getScores}>Fetch scores</Button>
+            </Col>
+            <Col>
+                <Button onClick={getRules}>Fetch rules found</Button>
+            </Col>
+            <Col>
+                <Button onClick={getAttempts}>Fetch attempts</Button>
+            </Col>
+            <Col>
+                <Button onClick={getTimestamps}>Fetch timestamps</Button>
             </Col>
         </>
     )

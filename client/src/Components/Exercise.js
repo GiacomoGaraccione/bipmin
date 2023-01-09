@@ -50,9 +50,6 @@ function Exercise(props) {
                 lintModule
             ]
         });
-        setModeler(modeler)
-
-
         setLinting(modeler.get('linting'));
         const linter = modeler.get('linting');
         linter.setLinterConfig(bpmnlintConfig);
@@ -61,12 +58,35 @@ function Exercise(props) {
         modeler.on('element.changed', (event) => {
             setModifiedDiagram(true)
         })
-
+        let exNum = 0
+        switch (props.user.version) {
+            case 1:
+                props.exNum === 1 ? exNum = 1 : exNum = 2
+                break
+            case 2:
+                props.exNum === 1 ? exNum = 1 : exNum = 2
+                break
+            case 3:
+                props.exNum === 1 ? exNum = 2 : exNum = 1
+                break
+            case 4:
+                props.exNum === 1 ? exNum = 2 : exNum = 1
+                break
+            default:
+                break
+        }
+        API.getExercise(exNum).then((ex) => {
+            API.getDiagram(ex.diagram/*props.user.id, ex.id*/).then(diag => {
+                modeler.importXML(diag);
+            }).catch(err => {
+                console.error(err);
+            })
+        })
+        setModeler(modeler)
     }, []);
 
     useEffect(() => {
         const user = props.user.id
-        console.log(props)
         if (user) {
             API.getProgress(user).then(prog => {
                 setUserProgress(prog);
@@ -120,27 +140,9 @@ function Exercise(props) {
                         setUnlockedRules(r)
                     })
                 })
-                API.getDiagram(ex.diagram/*props.user.id, ex.id*/).then(diag => {
-                    /*let blob = new Blob([diag], { type: "text/xml" })
-                    let diagram = (new window.DOMParser()).parseFromString(diag, "text/xml")
-                    console.log(diagram)
-                    console.log(diag)
-                    */
-                    mod.importXML(diag);
-                }).catch(err => {
-                    console.error(err);
-                })
             }).catch(err => {
                 console.error(err);
             })
-
-            setInterval(() => {
-                API.getTimeout(props.user.id, props.exNum).then((timeout) => {
-                    if (timeout) {
-                        alert("Timeout reached. Please submit your final attempt.")
-                    }
-                })
-            }, 60000)
         }
     }, [props.user]);
 

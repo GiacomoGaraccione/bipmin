@@ -34,7 +34,7 @@ function LoginForm(props) {
           <Form>
             {errorMessage ? <Alert variant='danger'>{errorMessage}</Alert> : ''}
             <FormGroup>
-              <img alt="logo" src="resources/logo.svg" width={160} className="mt-5" />
+              <img alt="logo" src={process.env.PUBLIC_URL + "/logo.svg"} width={160} className="mt-5" />
             </FormGroup>
             <FormGroup className='whiteColor'>
               <h2>BIPMIN</h2>
@@ -51,9 +51,6 @@ function LoginForm(props) {
               <Form.Control type='password' value={password} onChange={ev => setPassword(ev.target.value)} />
             </Form.Group>
             <Button className='mt-5' variant="light" onClick={handleSubmit}>Login</Button>
-            <FormGroup className='mt-4 whiteColor'>
-              Don't have an account? Contact your system administrator.
-            </FormGroup>
           </Form>
         </Col>
       </Row>

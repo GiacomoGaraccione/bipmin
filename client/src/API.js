@@ -297,6 +297,37 @@ async function loadFile(content) {
   }
 }
 
+async function getScores() {
+  const response = await fetch(baseURL + "logs/scores")
+  if (!response.ok)
+    throw new Error(response.statusText);
+  const scores = await response.json();
+  return scores;
+}
+
+async function getRulesFound() {
+  const response = await fetch(baseURL + "logs/rules")
+  if (!response.ok)
+    throw new Error(response.statusText);
+  const rules = await response.json();
+  return rules;
+}
+
+async function getAttempts() {
+  const response = await fetch(baseURL + "logs/attempts")
+  if (!response.ok)
+    throw new Error(response.statusText);
+  const attempts = await response.json();
+  return attempts;
+}
+async function getTimestamps() {
+  const response = await fetch(baseURL + "logs/timestamps")
+  if (!response.ok)
+    throw new Error(response.statusText);
+  const timestamps = await response.json();
+  return timestamps;
+}
+
 /**
  * Login APIs
  */
@@ -342,6 +373,6 @@ const API = {
   getDiagram, getExercise, listExercises, getProgress, updateProgress, listProgresses,
   listUsers, getUser, updateAvatar, logIn, logOut, getUserInfo,
   getUserRules, unlockRule, getRules, getScore, buyPieces, increasePoints, reduceGrade, saveDiagram,
-  recordAttempt, getAttemptNumber, addTimestamp, getTimeout, loadFile
+  recordAttempt, getAttemptNumber, addTimestamp, getTimeout, loadFile, getScores, getRulesFound, getAttempts, getTimestamps
 }
 export default API;

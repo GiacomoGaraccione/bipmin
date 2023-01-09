@@ -13,8 +13,10 @@ COPY . .
 #COPY package.json src/package.json
 
 RUN npm ci
-RUN npm run build
+RUN npm run build --env.PUBLIC_URL="/bipmin/app/build" 
+RUN npm install serve
 ENV NODE_ENV production
+COPY ./public/.htaccess /app/build
 
 EXPOSE 3000
 
