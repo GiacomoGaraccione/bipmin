@@ -1,0 +1,673 @@
+name,exerciseId,points,spent,grade
+John,1,0,0,120
+John,2,0,0,108
+Jane,1,0,0,120
+Jane,2,0,0,120
+Kylie B,1,0,0,120
+Kylie B,2,0,0,120
+Mathew K,1,0,0,120
+Mathew K,2,0,0,120
+Mario R,1,0,0,120
+Mario R,2,0,0,120
+Tommaso F,1,0,0,120
+Tommaso F,2,0,0,120
+Takla T,1,0,0,120
+Takla T,2,0,0,120
+Alessio S,1,0,0,120
+Alessio S,2,0,0,120
+Marta C,1,0,0,120
+Marta C,2,0,0,120
+Mostafa A,1,0,0,120
+Mostafa A,2,0,0,120
+Lorenzo A,1,0,0,120
+Lorenzo A,2,0,0,120
+Sarah C,1,0,0,120
+Sarah C,2,0,0,120
+Nicola V,1,0,0,120
+Nicola V,2,0,0,120
+Adriana H,1,0,0,120
+Adriana H,2,0,0,120
+Shantal F,1,0,0,120
+Shantal F,2,0,0,120
+Tommaso N,1,0,0,120
+Tommaso N,2,0,0,120
+Giacomo G,1,12,0,120
+Giacomo G,2,0,12,120
+Giacomo G2,1,0,0,120
+Giacomo G2,2,0,0,120
+Mariachiara Mecati,1,0,0,120
+Mariachiara Mecati,2,0,0,120
+Marco Torchiano,1,0,0,120
+Marco Torchiano,2,0,0,120
+Luca Ardito,1,0,0,120
+Luca Ardito,2,0,0,120
+Riccardo Coppola,1,0,0,120
+Riccardo Coppola,2,0,0,120
+Tommaso Fulcini,1,0,0,120
+Tommaso Fulcini,2,0,0,120
+Martina Agnese,1,0,0,120
+Martina Agnese,2,0.5,1,120
+Bazil Abdullah Ahmed,1,1,0,-16
+Bazil Abdullah Ahmed,2,0,0,120
+Antonino Allegro,1,0.5,0,120
+Antonino Allegro,2,0,0,120
+Rebecca Almondo,1,0,0,120
+Rebecca Almondo,2,0,0,120
+Giulia Amatiello,1,0,0,120
+Giulia Amatiello,2,0,1,65
+Chiara Angelini,1,0.5,0,85.5
+Chiara Angelini,2,0,0,120
+Michael Arabia,1,0.5,2,-230
+Michael Arabia,2,0,0,120
+Eleonora Arras,1,0,0,120
+Eleonora Arras,2,0.5,0,74
+Marco Artusio,1,0,0,120
+Marco Artusio,2,0,1,-464.5
+Ilaria Auda Gioanet,1,0.5,1,-17.5
+Ilaria Auda Gioanet,2,0,0,120
+Giada Barbieri,1,0,0,120
+Giada Barbieri,2,0,0,120
+Matteo Baret,1,0,0,120
+Matteo Baret,2,0,1,120
+Roxana Nicoleta Barligea,1,0,0,120
+Roxana Nicoleta Barligea,2,0.5,0,120
+Sara Battista,1,0.5,4,-95
+Sara Battista,2,0,0,120
+Paolo Baudino,1,0,0,120
+Paolo Baudino,2,0,0,120
+Isabella Beata,1,0,0,120
+Isabella Beata,2,0,1,52
+Romina Bellarmino,1,0,0,120
+Romina Bellarmino,2,0,0,120
+Matteo Bertolino,1,0,0,120
+Matteo Bertolino,2,0,0,120
+Davide Bisson,1,0,2,-11
+Davide Bisson,2,0,0,120
+Faezeh Boloukifar,1,0,0,120
+Faezeh Boloukifar,2,1,0,9
+Alessia Bonaudo,1,0,0,120
+Alessia Bonaudo,2,0.5,0,39.5
+Luca Borda Bossana,1,0,0,120
+Luca Borda Bossana,2,0,0,120
+Stefano Borri,1,0,0,108
+Stefano Borri,2,0,0,120
+Federica Bottero,1,0,0,120
+Federica Bottero,2,0,0,84
+Meghri Boudaghian,1,0,0,120
+Meghri Boudaghian,2,0,0,-108
+Samuele Breglia,1,0,3,37
+Samuele Breglia,2,0,0,120
+Lorenzo Bruna,1,1.5,0,88.5
+Lorenzo Bruna,2,0,0,120
+Micaela Brunero,1,0,0,120
+Micaela Brunero,2,0.5,0,120
+Alessia Bruno,1,0,0,120
+Alessia Bruno,2,0,1,32
+Alessia Bruzzone,1,1.5,0,87.5
+Alessia Bruzzone,2,0,0,120
+Beatrice Buratto,1,0,0,24
+Beatrice Buratto,2,0,0,120
+Elia Cecilia Cabrera Valentin,1,0,0,120
+Elia Cecilia Cabrera Valentin,2,0,0,120
+Luca Cafà,1,0,0,120
+Luca Cafà,2,0,1,-100.5
+Elia Campione,1,0,2,68
+Elia Campione,2,0,0,120
+Davide Campo,1,0.5,2,-432
+Davide Campo,2,0,0,120
+Luca Campodonico,1,0,0,120
+Luca Campodonico,2,0,0,24
+Riccardo Canali,1,0,0,120
+Riccardo Canali,2,0,1,54
+Silvia Candusso,1,0.5,1,76
+Silvia Candusso,2,0,0,120
+Lorenzo Canini,1,0.5,2,-53.5
+Lorenzo Canini,2,0,0,120
+Mauro Caradonna,1,0,0,120
+Mauro Caradonna,2,1,0,120
+Niccolò Caroli,1,0,0,120
+Niccolò Caroli,2,0,0,120
+Leonardo Ceccarelli,1,0,0,120
+Leonardo Ceccarelli,2,0,0,120
+Pasquale Alan Cesaro,1,0,0,84
+Pasquale Alan Cesaro,2,0,0,120
+Andres Felipe Chaverra Mosquera,1,0,0,120
+Andres Felipe Chaverra Mosquera,2,0,0,120
+Marco Coggiola,1,0,0,120
+Marco Coggiola,2,0.5,2,14.5
+Vittorio Col,1,0,0,120
+Vittorio Col,2,0,0,120
+Noemi Collazzo,1,0,0,72
+Noemi Collazzo,2,0,0,120
+Alessandro Colosi,1,0,0,120
+Alessandro Colosi,2,0,0,72
+Sofia Costolani,1,0,0,120
+Sofia Costolani,2,0.5,0,-89.5
+Umberto Cramer,1,0,0,120
+Umberto Cramer,2,0,0,120
+Carlo Crescenzi,1,0,0,120
+Carlo Crescenzi,2,0,0,120
+Pietro Paolo De Crescenzo,1,0,0,120
+Pietro Paolo De Crescenzo,2,1.5,0,-214
+Pia Defazio,1,0,0,120
+Pia Defazio,2,1,0,63.5
+Alessandro Dorelli,1,0,0,96
+Alessandro Dorelli,2,0,0,120
+Nicholas Dosio,1,0,0,120
+Nicholas Dosio,2,0,0,120
+Francesca Esposito,1,0,0,120
+Francesca Esposito,2,0,0,120
+Emanuele Facchini,1,0,0,120
+Emanuele Facchini,2,0,1,-80.5
+Alessandro Abramo,1,0,0,96
+Alessandro Abramo,2,0,0,120
+Lorenzo Aidala,1,0,1,-8
+Lorenzo Aidala,2,0,0,120
+Gisela Alesso,1,0,0,120
+Gisela Alesso,2,0,0,120
+Anna Alpigiano,1,0,0,120
+Anna Alpigiano,2,0,0,120
+Vittorio Appino,1,0,0,120
+Vittorio Appino,2,0,0,120
+Francesca Barra,1,0,0,120
+Francesca Barra,2,0,0,120
+Fabio Belfiore,1,0,0,120
+Fabio Belfiore,2,0,1,108
+Alessia Beoni,1,0,0,120
+Alessia Beoni,2,0,0,84
+Michela Bocca,1,0,3,45.5
+Michela Bocca,2,0,0,120
+Antonio Bongiorno,1,0.5,0,85.5
+Antonio Bongiorno,2,0,0,120
+Davide Borda Bossana,1,0,0,120
+Davide Borda Bossana,2,0,1,120
+Marco Burato,1,0,0,120
+Marco Burato,2,0,2,-183.5
+Katia Cagnato,1,0,0,24
+Katia Cagnato,2,0,0,120
+Giulia Chiantia,1,0.5,1,67.5
+Giulia Chiantia,2,0,0,120
+Alex Chiappero,1,0,0,120
+Alex Chiappero,2,0,1,109
+Lucia Ines Codesal,1,0,0,120
+Lucia Ines Codesal,2,0,0,48
+Antonio Alberto Congiu,1,0,0,120
+Antonio Alberto Congiu,2,0,0,120
+Gaia Corti,1,0.5,0,120
+Gaia Corti,2,0,0,120
+Vittorio Cottura,1,0,0,120
+Vittorio Cottura,2,4,0,92
+Vincenzo D'Agostino,1,0,0,120
+Vincenzo D'Agostino,2,0,1,120
+Simone D'Angelo,1,0,0,96
+Simone D'Angelo,2,0,0,120
+Ylenia De Nittis,1,0.5,2,90.5
+Ylenia De Nittis,2,0,0,120
+Leonardo De Rita,1,0,0,120
+Leonardo De Rita,2,0,0,108
+Andrea Di Domenicantonio,1,0,0,120
+Andrea Di Domenicantonio,2,0.5,0,120
+Maria Chiara Di Fazio,1,1,0,73
+Maria Chiara Di Fazio,2,0,0,120
+Lorenzo Di Muzio,1,0,0,120
+Lorenzo Di Muzio,2,0,0,120
+Fabio Di Renzo,1,0,0,120
+Fabio Di Renzo,2,0,0,120
+Roberta Di Stani,1,0,0,120
+Roberta Di Stani,2,0,0,120
+Alessia Donzella,1,0,0,120
+Alessia Donzella,2,0,0,120
+Alberto Dulcimascolo,1,0,0,120
+Alberto Dulcimascolo,2,0,0,120
+Ferdinando Errigo,1,0,0,120
+Ferdinando Errigo,2,0,0,108
+Marika Fabbro,1,0,0,120
+Marika Fabbro,2,0,0,120
+Giusy Carla Falcone,1,0.5,0,120
+Giusy Carla Falcone,2,0,0,120
+Gabriele Felizia,1,0,0,48
+Gabriele Felizia,2,0,0,120
+Lorenzo Gavinelli,1,0,0,120
+Lorenzo Gavinelli,2,1,0,120
+Amir Ghaderidoost,1,0,0,120
+Amir Ghaderidoost,2,0.5,2,30
+Erica Gherra,1,0,0,120
+Erica Gherra,2,0,0,120
+Elisabetta Girolami,1,0,1,87
+Elisabetta Girolami,2,0,0,120
+Daria Glushkova,1,0,0,120
+Daria Glushkova,2,1,0,86
+Gabriela Grosu,1,0,0,120
+Gabriela Grosu,2,1.5,0,76
+Flaminia Guagni,1,0,0,120
+Flaminia Guagni,2,0,0,120
+Federico Guido,1,0,0,72
+Federico Guido,2,0,0,120
+Salman Mohammed Hussain,1,0,0,120
+Salman Mohammed Hussain,2,0.5,0,28
+Hermann Iemmolo,1,0,0,120
+Hermann Iemmolo,2,0.5,1,108
+Benxiang Jia,1,0,0,120
+Benxiang Jia,2,0,0,120
+Emaan Khan,1,0,0,120
+Emaan Khan,2,0,0,120
+Roxhers Kuka,1,0,0,120
+Roxhers Kuka,2,0,0,108
+Sara Fasoli,1,0,0,120
+Sara Fasoli,2,0,0,120
+Giulia Favelli,1,0,0,120
+Giulia Favelli,2,0,0,120
+Claudia Fedele,1,0,0,120
+Claudia Fedele,2,0,0,120
+Marta Ferrari,1,0,0,120
+Marta Ferrari,2,0,0,120
+Rachele Fissore,1,0,0,120
+Rachele Fissore,2,0,0,120
+Eleonora Francabandiera,1,0,0,120
+Eleonora Francabandiera,2,0,0,120
+Samuele Frasconi,1,0,0,120
+Samuele Frasconi,2,0,0,120
+Rosa Gaiani,1,0,0,120
+Rosa Gaiani,2,0,0,120
+Federica Gavazza,1,0,0,120
+Federica Gavazza,2,0,0,120
+Elisa Giacalone,1,0,0,120
+Elisa Giacalone,2,0,0,120
+Nicolò Giannì,1,0,0,120
+Nicolò Giannì,2,0,0,120
+Giulio Maria Giletto,1,0,0,120
+Giulio Maria Giletto,2,0,0,120
+Marianna Giorgetti,1,0,0,120
+Marianna Giorgetti,2,0,0,120
+Carlo Gramaglia,1,0,0,120
+Carlo Gramaglia,2,0,0,120
+Silvia Grasso,1,0,0,120
+Silvia Grasso,2,0,0,120
+Francesco Guccione,1,0,0,120
+Francesco Guccione,2,0,0,120
+Francesca Gurgone,1,0,0,120
+Francesca Gurgone,2,0,0,120
+Maryam Hemmati,1,0,0,120
+Maryam Hemmati,2,0,0,120
+Silvester Kacani,1,0,0,120
+Silvester Kacani,2,0,0,120
+Uzair Ahmed Khan,1,0,0,120
+Uzair Ahmed Khan,2,0,0,120
+Harsh Kumar,1,0,0,120
+Harsh Kumar,2,0,0,120
+Hilola Sharabidinovna Kurbanova,1,0,0,120
+Hilola Sharabidinovna Kurbanova,2,0,0,120
+Federica Lo Chiatto,1,0,0,120
+Federica Lo Chiatto,2,0,0,120
+Andrea Longobardo,1,0,0,120
+Andrea Longobardo,2,0,0,120
+Gabriele Luzzi,1,0,0,120
+Gabriele Luzzi,2,0,0,120
+Elena Maione,1,0,0,120
+Elena Maione,2,0,0,120
+Mohammad Mahdi Majidi Nasab,1,0,0,120
+Mohammad Mahdi Majidi Nasab,2,0,0,120
+Ginevra Mancini,1,0,0,120
+Ginevra Mancini,2,0,0,120
+Simone Manente,1,0,0,120
+Simone Manente,2,0,0,120
+Alessandro Manina,1,0,0,120
+Alessandro Manina,2,0,0,120
+Giovanni Marcenaro,1,0,0,120
+Giovanni Marcenaro,2,0,0,120
+Giorgia Mariggiò,1,0,0,120
+Giorgia Mariggiò,2,0,0,120
+Matteo Marino,1,0,0,120
+Matteo Marino,2,0,0,120
+Edoardo Martiny,1,0,0,120
+Edoardo Martiny,2,0,0,120
+Filippo Masci,1,0,0,120
+Filippo Masci,2,0,0,120
+Alessandro Giovanni Maturo,1,0,0,120
+Alessandro Giovanni Maturo,2,0,0,120
+Francesco Mazzeo,1,0,0,120
+Francesco Mazzeo,2,0,0,120
+Mattia Meggiolaro,1,0,0,-228
+Mattia Meggiolaro,2,0,0,120
+Samuele Melardi,1,0,0,120
+Samuele Melardi,2,0,0,120
+Leonardo Micucci,1,0,0,120
+Leonardo Micucci,2,0,0,120
+Leonardo Mischitelli,1,0,0,120
+Leonardo Mischitelli,2,0,0,120
+Luca Modica,1,0,0,120
+Luca Modica,2,0,0,120
+Atabak Monsefi,1,0,0,120
+Atabak Monsefi,2,0,0,120
+Valentina Monti,1,0,0,120
+Valentina Monti,2,0,0,120
+Carolina Mosquera Charry,1,0,0,120
+Carolina Mosquera Charry,2,0,0,120
+Straton Mushyirahamwe,1,0,0,120
+Straton Mushyirahamwe,2,0,0,120
+Emanuel Nikolli,1,0,0,120
+Emanuel Nikolli,2,0,0,120
+Vadim Nikonov,1,0,0,120
+Vadim Nikonov,2,0,0,120
+Lorenzo Occhi,1,0,0,120
+Lorenzo Occhi,2,0,0,120
+Anna Oggero,1,0,0,120
+Anna Oggero,2,0,0,120
+Giulia Panepinto,1,0,0,120
+Giulia Panepinto,2,0,0,120
+Alessandro Pasinetti,1,0,0,120
+Alessandro Pasinetti,2,0,0,120
+Alma Mirella Peltokallio,1,0,0,120
+Alma Mirella Peltokallio,2,0,0,120
+Luca Pio Perotto,1,0,0,120
+Luca Pio Perotto,2,0,0,120
+Edoardo Piccinini,1,0,0,120
+Edoardo Piccinini,2,0,0,120
+Andrea Pieraccioli,1,0,0,120
+Andrea Pieraccioli,2,0,0,120
+Lorenzo Piraneo,1,0,0,120
+Lorenzo Piraneo,2,0,0,120
+Gianmarco Polvani,1,0,0,120
+Gianmarco Polvani,2,0,0,120
+Annalisa Labadini,1,0,0,120
+Annalisa Labadini,2,0,0,120
+Simone Leo,1,0,0,120
+Simone Leo,2,0,0,120
+Pietro Leoncini,1,0,0,120
+Pietro Leoncini,2,0,0,120
+Christopher Leproni,1,0,0,120
+Christopher Leproni,2,0,0,120
+Dario Macaluso,1,0,0,120
+Dario Macaluso,2,0,0,120
+Beatrice Maccini,1,0,0,120
+Beatrice Maccini,2,0,0,120
+Gabriele Mantia,1,0,0,120
+Gabriele Mantia,2,0,0,120
+Chiara Marra,1,0,0,120
+Chiara Marra,2,0,0,120
+Samuele Marsano,1,0,0,120
+Samuele Marsano,2,0,0,120
+Pablo Martin,1,0,0,120
+Pablo Martin,2,0,0,120
+Mauro Massari,1,0,0,120
+Mauro Massari,2,0,0,120
+Andrea Mattiolo,1,0,0,120
+Andrea Mattiolo,2,0,0,120
+Gaia Melardi,1,0,0,120
+Gaia Melardi,2,0,0,120
+Alessia Miglioli,1,0,0,120
+Alessia Miglioli,2,0,0,120
+Marco Milanesio,1,0,0,120
+Marco Milanesio,2,0,0,120
+Hamdi Ahmed Mohamed,1,0,0,120
+Hamdi Ahmed Mohamed,2,0,0,120
+Kimiaalsadat Moosavian,1,0,0,120
+Kimiaalsadat Moosavian,2,0,0,120
+Francesco Morciano,1,0,0,120
+Francesco Morciano,2,0,0,120
+Uarda Muharremi,1,0,0,120
+Uarda Muharremi,2,0,0,120
+Valentina Nalesso,1,0,0,120
+Valentina Nalesso,2,0,0,120
+Alessandro Nuti,1,0,0,120
+Alessandro Nuti,2,0,0,120
+Melis Oral,1,0,0,120
+Melis Oral,2,0,0,120
+Francesco Pasquariello,1,0,0,120
+Francesco Pasquariello,2,0,0,120
+Matteo Picco,1,0,0,120
+Matteo Picco,2,0,0,120
+Virginia Piletto,1,0,0,120
+Virginia Piletto,2,0,0,120
+Virginia Piletto,1,0,0,120
+Virginia Piletto,2,0,0,120
+Matteo Pilotto,1,0,0,120
+Matteo Pilotto,2,0,0,120
+Martina Pirali,1,0,0,120
+Martina Pirali,2,0,0,120
+Giorgia Piscicelli,1,0,0,120
+Giorgia Piscicelli,2,0,0,120
+Chiara Previdi,1,0,0,120
+Chiara Previdi,2,0,0,120
+Davide Prosdocimi,1,0,0,120
+Davide Prosdocimi,2,0,0,120
+Masoud Rahimiazar,1,0,0,120
+Masoud Rahimiazar,2,0,0,120
+Aswin Raja,1,0,0,120
+Aswin Raja,2,0,0,120
+Mattia Rebola,1,0,0,120
+Mattia Rebola,2,0,0,120
+Fabiola Maria Ricca,1,0,0,120
+Fabiola Maria Ricca,2,0,0,120
+Alessia Riccio,1,0,0,120
+Alessia Riccio,2,0,0,120
+Angelo Rollo,1,0,0,120
+Angelo Rollo,2,0,0,120
+Mattia Romano,1,0,0,120
+Mattia Romano,2,0,0,120
+Enrico Romeo,1,0,0,120
+Enrico Romeo,2,0,0,120
+Florindo Sarpi,1,0,0,120
+Florindo Sarpi,2,0,0,120
+Valentina Sarzano,1,0,0,120
+Valentina Sarzano,2,0,0,120
+Sarah Schubries,1,0,0,120
+Sarah Schubries,2,0,0,120
+Pedro Schuetze Andrade,1,0,0,120
+Pedro Schuetze Andrade,2,0,0,120
+Luca Scivetti,1,0,0,120
+Luca Scivetti,2,0,0,120
+Simone Serpilli,1,0,0,120
+Simone Serpilli,2,0,0,120
+Sanjay Singh,1,0,0,120
+Sanjay Singh,2,0,0,120
+Maria Elena Cuccia,1,0,0,120
+Maria Elena Cuccia,2,0,0,120
+Filippo Maria Simone D'Anna,1,0,0,120
+Filippo Maria Simone D'Anna,2,0,0,120
+Andrea Di Ganci,1,0,0,120
+Andrea Di Ganci,2,0,0,120
+Aurora Sofia Di Matteo,1,0,0,120
+Aurora Sofia Di Matteo,2,0,0,120
+Federico Elegir,1,0,0,120
+Federico Elegir,2,0,0,120
+Jonas Gäbele,1,0,0,120
+Jonas Gäbele,2,0,0,120
+Desiree Miriam Goegan,1,0,0,120
+Desiree Miriam Goegan,2,0,0,120
+Sveva Malgaroli,1,0,0,120
+Sveva Malgaroli,2,0,0,120
+Emanuela Nasello,1,0,0,120
+Emanuela Nasello,2,0,0,120
+Assunta Parziale,1,0,0,120
+Assunta Parziale,2,0,0,120
+Alessia Pellino,1,0,0,120
+Alessia Pellino,2,0,0,120
+Gianluca Piazza,1,0,0,120
+Gianluca Piazza,2,0,0,120
+Martina Portesan,1,0,0,120
+Martina Portesan,2,0,0,120
+Massimiliano Prato,1,0,0,120
+Massimiliano Prato,2,0,0,120
+Simone Preziosa,1,0,0,120
+Simone Preziosa,2,0,0,120
+Mattia Regina,1,0,0,120
+Mattia Regina,2,0,0,120
+Adele Rey,1,0,0,120
+Adele Rey,2,0,0,120
+Carlotta Rossi,1,0,0,120
+Carlotta Rossi,2,0,0,120
+Giulia Rostagno,1,0,0,120
+Giulia Rostagno,2,0,0,120
+Giorgio Ruberti,1,0,0,120
+Giorgio Ruberti,2,0,0,120
+Gerardo Ruotolo,1,0,0,120
+Gerardo Ruotolo,2,0,0,120
+Eisa Sahar,1,0,0,120
+Eisa Sahar,2,0,0,120
+Letizia Salvatelli,1,0,0,120
+Letizia Salvatelli,2,0,0,120
+Benedetta Sandrone,1,0,0,120
+Benedetta Sandrone,2,0,0,120
+Carmelina Sannino,1,0,0,120
+Carmelina Sannino,2,0,0,120
+Nicolò Santangelo,1,0,0,120
+Nicolò Santangelo,2,0,0,120
+Antonino Scalogna,1,0,0,120
+Antonino Scalogna,2,0,0,120
+Matteo Schiavone,1,0,0,120
+Matteo Schiavone,2,0,0,120
+Milad Shabani Sichani,1,0,0,120
+Milad Shabani Sichani,2,0,0,120
+Anna Silvestro,1,0,0,120
+Anna Silvestro,2,0,0,120
+Ayda Soheilifar,1,0,0,120
+Ayda Soheilifar,2,0,0,120
+Sevda Soheilifar,1,0,0,120
+Sevda Soheilifar,2,0,0,120
+Andrea Solito,1,0,0,120
+Andrea Solito,2,0,0,120
+Giovanni Antonino Sollami,1,0,0,120
+Giovanni Antonino Sollami,2,0,0,120
+Domenico Sorrenti,1,0,0,120
+Domenico Sorrenti,2,0,0,120
+Marta Spani,1,0,0,120
+Marta Spani,2,0,0,120
+Sara Spina,1,0,0,120
+Sara Spina,2,0,0,120
+Chiara Spirito,1,0.5,2,100.5
+Chiara Spirito,2,0,0,120
+Giovanni Susino,1,0,0,120
+Giovanni Susino,2,0,0,120
+Matteo Taglioli,1,0,0,120
+Matteo Taglioli,2,0,0,120
+Mostafa Takmar,1,0,0,120
+Mostafa Takmar,2,0,0,120
+Letizia Ignazietta Taras,1,0,0,120
+Letizia Ignazietta Taras,2,0,0,120
+Luca Terzolo,1,0,0,120
+Luca Terzolo,2,0,0,120
+Matteo Toppani,1,0,0,120
+Matteo Toppani,2,0,0,120
+Arianna Torretta,1,0,0,120
+Arianna Torretta,2,0,0,120
+Antonio Pio Trentadue,1,0,0,120
+Antonio Pio Trentadue,2,0,0,120
+Luca Turribi,1,0,0,120
+Luca Turribi,2,0,0,120
+Morgana Vanzini,1,0,0,120
+Morgana Vanzini,2,0,0,120
+Silvia Vigliotti,1,0,0,120
+Silvia Vigliotti,2,0,0,120
+Francesco Vinci,1,0,0,120
+Francesco Vinci,2,0,0,120
+Giampaolo Volpe,1,0,0,120
+Giampaolo Volpe,2,0,0,120
+Valentina Vona,1,0,0,120
+Valentina Vona,2,0,0,120
+Saba Yeganeh,1,0,0,120
+Saba Yeganeh,2,0,0,120
+Hussein Younes,1,0,0,120
+Hussein Younes,2,0,0,120
+Leonardo Zizzutto,1,0,0,120
+Leonardo Zizzutto,2,0,0,120
+Nicolò Zocco,1,0,0,120
+Nicolò Zocco,2,0,0,120
+Barbara Arfé,1,0,0,120
+Barbara Arfé,2,0,0,120
+Bianca Barbarino,1,0,0,120
+Bianca Barbarino,2,0,0,120
+Federico Bonifazi,1,0,0,120
+Federico Bonifazi,2,0,0,120
+Pierpaolo Casaletto,1,0,0,120
+Pierpaolo Casaletto,2,0,0,120
+Roberto Crispino,1,0,0,120
+Roberto Crispino,2,0,0,120
+Giuseppe Dell'Ali,1,0,0,120
+Giuseppe Dell'Ali,2,0,0,120
+Noemi Demarchi,1,0,0,120
+Noemi Demarchi,2,0,0,120
+Erica Di Giamberardino,1,0,0,120
+Erica Di Giamberardino,2,0,0,120
+Mariacarla Dragotti,1,0,0,120
+Mariacarla Dragotti,2,0,0,120
+Ayoub El Fateh,1,0,0,120
+Ayoub El Fateh,2,0,0,120
+Giulia Falzone,1,0,0,120
+Giulia Falzone,2,0,0,120
+Roberta Ferranti,1,0,0,120
+Roberta Ferranti,2,0,0,120
+Giulia Franco,1,0,0,120
+Giulia Franco,2,0,0,120
+Davide Friscia,1,0,0,120
+Davide Friscia,2,0,0,120
+Elisa Gaido,1,0,0,120
+Elisa Gaido,2,0,0,120
+Federica Indomenico,1,0,0,120
+Federica Indomenico,2,0,0,120
+Manuel Isla Esteve,1,0,0,120
+Manuel Isla Esteve,2,0,0,120
+Luca Modica,1,0,0,120
+Luca Modica,2,0,0,120
+Negar Nazari,1,0,0,120
+Negar Nazari,2,0,0,120
+Leonardo Pacini,1,0,0,120
+Leonardo Pacini,2,0,0,120
+Giuseppe Edoardo Pillitteri,1,0,0,120
+Giuseppe Edoardo Pillitteri,2,0,0,120
+Francesco Mario Piscopo,1,0,0,120
+Francesco Mario Piscopo,2,0,0,120
+Jessica Pizzo,1,0,0,120
+Jessica Pizzo,2,0,0,120
+Alessandro Polizzi,1,0,0,120
+Alessandro Polizzi,2,0,0,120
+Antonio Quaranta,1,0,0,120
+Antonio Quaranta,2,0,0,120
+Sevarakhon Akhmedova,1,0,0,120
+Sevarakhon Akhmedova,2,0,0,120
+Alessio Soru,1,0,0,120
+Alessio Soru,2,0,0,120
+Vittorio Claudio Spalluto,1,0,0,120
+Vittorio Claudio Spalluto,2,0,0,120
+Davide Stassi,1,0,0,120
+Davide Stassi,2,0,0,120
+Giulia Strambi,1,0,0,120
+Giulia Strambi,2,0,0,120
+Valentina Stura,1,0,0,120
+Valentina Stura,2,0,0,120
+Matin Taj Bakhsh,1,0,0,120
+Matin Taj Bakhsh,2,0,0,120
+Jacopo Tarenzi,1,0,0,120
+Jacopo Tarenzi,2,0,0,120
+Pietro Termite,1,0,0,120
+Pietro Termite,2,0,0,120
+Silvia Testa,1,0,0,120
+Silvia Testa,2,0,0,120
+Martina Ullasci,1,0,0,120
+Martina Ullasci,2,0,0,120
+Muhammad Umair,1,0,0,120
+Muhammad Umair,2,0,0,120
+Vittorio Vaiano,1,0,0,120
+Vittorio Vaiano,2,0,0,120
+Umberto Valente,1,0,0,120
+Umberto Valente,2,0,0,120
+Brenda Valeriano,1,0,0,120
+Brenda Valeriano,2,0,0,120
+Beatrice Valsania,1,0,0,120
+Beatrice Valsania,2,0,0,120
+Simonetta Vana,1,0,0,120
+Simonetta Vana,2,0,0,120
+Carmine Viceconte,1,0,0,120
+Carmine Viceconte,2,0,0,120
+Elisa Villata,1,0,0,120
+Elisa Villata,2,0,0,120
+Matteo Villosio,1,0,0,120
+Matteo Villosio,2,0,0,120
+Lorenzo Vinciguerra,1,0,0,120
+Lorenzo Vinciguerra,2,0,0,120
+Elena Visconti,1,0,0,120
+Elena Visconti,2,0,0,120
+Leonardo Volpe,1,0,0,120
+Leonardo Volpe,2,0,0,120
+Claudia Zingarello,1,0,0,120
+Claudia Zingarello,2,0,0,120
