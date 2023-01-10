@@ -21,6 +21,7 @@ function Footer(props) {
     const [success, setSuccess] = useState(false)
     const [attempt, setAttempt] = useState(0)
     const [timeout, setTimeout] = useState(false)
+    const [noNames, setNoNames] = useState(false)
 
     const updateFailedRules = (error) => {
         setFailedRules((prev) => [...prev, error])
@@ -74,6 +75,7 @@ function Footer(props) {
     const checkSyntax = async () => {
         let errorFlag = false
         props.linting.toggle(true)
+        setNoNames(false)
         if (!lintingErrors) {
             let result = await checkLinting()
             if (result.length > 0) {
@@ -85,6 +87,10 @@ function Footer(props) {
             errorFlag = true;
         } else {
             setSyntaxErrors([])
+        }
+        if (props.modeler.get('elementRegistry').getAll().filter((e) => e.type !== "bpmn:Process" && e.type !== "bpmn:Collaboration" && e.type.indexOf("Flow") < 0).filter((e) => !e.businessObject.name || e.businessObject.name === "").length > 0) {
+            setNoNames(true)
+            errorFlag = true
         }
         try {
             const result = await props.modeler.saveXML({ format: true })
@@ -102,7 +108,7 @@ function Footer(props) {
             const filterElementLabels = (event) => {
                 const match = conditions["Label"].find((el) => {
                     if (event.businessObject.name) {
-                        if (el.includes(event.businessObject.name.toLowerCase())) {
+                        if (event.businessObject.name.toLowerCase().includes(el)) {
                             return true
                         }
                     } else return undefined
@@ -119,7 +125,7 @@ function Footer(props) {
                 const match = conditions["Pool"].find((el) => {
                     if (event.parent) {
                         if (event.parent.businessObject.name) {
-                            if (el.includes(event.parent.businessObject.name.toLowerCase()) && event.parent.type === "bpmn:Participant") {
+                            if (event.parent.businessObject.name.toLowerCase().includes(el) && event.parent.type === "bpmn:Participant") {
                                 return true
                             }
                         } else return undefined
@@ -136,7 +142,7 @@ function Footer(props) {
             if (conditions[target]["Label"]) {
                 const filterTarget = (event) => {
                     const match = conditions[target]["Label"].find((el) => {
-                        if (el.includes(event.target.businessObject.name.toLowerCase()) && event.target.type === "bpmn:" + conditions[target]["Element"] && event.type === "bpmn:SequenceFlow" && checkEvent(event)) {
+                        if (event.target.businessObject.name.toLowerCase().includes(el) && event.target.type === "bpmn:" + conditions[target]["Element"] && event.type === "bpmn:SequenceFlow" && checkEvent(event)) {
                             return true
                         }
                     })
@@ -157,7 +163,7 @@ function Footer(props) {
             if (conditions[messageTarget]["Label"]) {
                 const filterMessageTarget = (event) => {
                     const match = conditions[messageTarget]["Label"].find((el) => {
-                        if (el.includes(event.target.businessObject.name.toLowerCase()) && event.target.type === "bpmn:" + conditions[messageTarget]["Element"] && event.type === "bpmn:MessageFlow" && checkEvent(event)) {
+                        if (event.target.businessObject.name.toLowerCase().includes(el) && event.target.type === "bpmn:" + conditions[messageTarget]["Element"] && event.type === "bpmn:MessageFlow" && checkEvent(event)) {
                             return true
                         }
                     })
@@ -178,7 +184,7 @@ function Footer(props) {
             if (conditions[messageSender]["Label"]) {
                 const filterMessageSender = (event) => {
                     const match = conditions[messageSender]["Label"].find((el) => {
-                        if (el.includes(event.source.businessObject.name.toLowerCase()) && event.source.type === "bpmn:" + conditions[messageSender]["Element"] && event.type === "bpmn:MessageFlow" && checkEvent(event)) {
+                        if (event.source.businessObject.name.toLowerCase().includes(el) && event.source.type === "bpmn:" + conditions[messageSender]["Element"] && event.type === "bpmn:MessageFlow" && checkEvent(event)) {
                             return true
                         }
                     })
@@ -199,7 +205,7 @@ function Footer(props) {
             if (conditions[father]["Label"]) {
                 const filterFather = (event) => {
                     const match = conditions[father]["Label"].find((el) => {
-                        if (el.includes(event.source.businessObject.name.toLowerCase()) && event.source.type === "bpmn:" + conditions[father]["Element"] && event.type === "bpmn:SequenceFlow" && checkEvent(event)) {
+                        if (event.source.businessObject.name.toLowerCase().includes(el) && event.source.type === "bpmn:" + conditions[father]["Element"] && event.type === "bpmn:SequenceFlow" && checkEvent(event)) {
                             return true
                         }
                     })
@@ -219,7 +225,7 @@ function Footer(props) {
                 let name = true
                 if (conditions["BoundedEvent"]["Label"]) {
                     const match = conditions["BoundedEvent"]["Label"].find((el) => {
-                        if (el.includes(event.businessObject.name.toLowerCase())) return true
+                        if (event.businessObject.name.toLowerCase().includes(el)) return true
                     })
                     name = match ? true : false
                 }
@@ -235,7 +241,7 @@ function Footer(props) {
                 let name = true
                 if (conditions["BoundingElement"]["Label"]) {
                     const match = conditions["BoundingElement"]["Label"].find((el) => {
-                        if (el.includes(event.host.businessObject.name.toLowerCase())) return true
+                        if (event.host.businessObject.name.toLowerCase().includes(el)) return true
                     })
                     name = match ? true : false
                 }
@@ -317,6 +323,7 @@ function Footer(props) {
                         errorFlag = true;
                         setErrors((prev) => [...prev, "<li>Your diagram does not describe correctly the following part of the problem: <b>" + rule.split("_")[1] + "</b> - " + val.reward + " point(s) lost"])
                         updateFailedRules(rule)
+                        penalty += parseFloat(val.reward)
                     }
                 }
             }
@@ -370,12 +377,21 @@ function Footer(props) {
         }
     }
 
+    const returnHome = async () => {
+        try {
+            const result = await props.modeler.saveXML({ format: true })
+            const { xml } = result
+            API.recordAttempt(props.user.id, props.exercise.id, "final", [], null, xml, "-")
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
     return (<>
         <Row>
             <Col></Col>
-            <Col>{timeout && <Alert variant="danger">Timeout reached. Please submit your final attempt by checking the syntax/correctness of your solution.</Alert>}
-                {(((props.user.version % 2 === 1 && props.exNum === 2) ||
-                    (props.user.version % 2 === 0 && props.exNum === 1)) && !timeout) && <Alert variant="success">Number of attempts left for correctness check: {3 - attempt}</Alert>}
+            <Col>{timeout && <Alert variant="danger">Timeout reached. Please submit your final attempt by clicking on the <b>Save and return home</b> button.</Alert>}
+
             </Col>
             <Col></Col>
         </Row>
@@ -386,6 +402,10 @@ function Footer(props) {
                 <Button variant={correct ? "outline-dark" : "success"} onClick={() => { /*checkRules()*/checkSyntax() }}>Check syntax</Button>
             </Col>
             <Col>
+                <Button variant={"success"} onClick={() => {
+                    returnHome()
+                    props.setMode("")
+                }}>Save and return home</Button>
             </Col>
         </Row>
 
@@ -396,7 +416,7 @@ function Footer(props) {
         <SyntaxErrorModal attempt={attempt} syntaxErrors={syntaxErrors} show={showSyntaxModal} onSuccessG={() => {
             setShowSyntaxModal(false)
             checkRules()
-        }} onSuccess={() => setShowSyntaxModal(false)} onFailure={() => setShowSyntaxModal(false)} user={props.user} exNum={props.exNum} />
+        }} onSuccess={() => setShowSyntaxModal(false)} onFailure={() => setShowSyntaxModal(false)} user={props.user} exNum={props.exNum} noNames={noNames} />
 
     </>
     );
@@ -411,27 +431,29 @@ function SyntaxErrorModal(props) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className="ms-3 me-3">
-                {props.syntaxErrors.length === 0 && <>
+                {props.syntaxErrors.length === 0 && !props.noNames && <>
                     <h5>Your diagram is syntactically correct. Congratulations!</h5>
                     {(((props.user.version % 2 === 1 && props.exNum === 2) ||
-                        (props.user.version % 2 === 0 && props.exNum === 1)) && props.attempt < 3
+                        (props.user.version % 2 === 0 && props.exNum === 1))
                     ) && <h5>You can now check the semantic correctness of your diagram</h5>}
                 </>}
                 {props.syntaxErrors.length > 0 && <>
                     <h5>Your diagram contains some syntactic errors.</h5>
                     <h5>Please review the highlighted errors on the diagram before checking again.</h5>
+                    {props.noNames && <h5>Moreover, ensure that <b>every element</b> in your diagram has a name.</h5>}
                 </>}
+                {props.noNames && props.syntaxErrors.length === 0 && <h5>Ensure that <b>every element</b> in your diagram has a name.</h5>}
             </Modal.Body>
             <Modal.Footer>
                 {props.syntaxErrors.length === 0 && ((props.user.version % 2 === 1 && props.exNum === 2) ||
                     (props.user.version % 2 === 0 && props.exNum === 1)
-                ) && props.attempt < 3 && <>
+                ) && !props.noNames && <>
                         <Button variant="success" onClick={props.onSuccessG}>Check correctness</Button>
                     </>}
                 {((props.syntaxErrors.length === 0 && !((props.user.version % 2 === 1 && props.exNum === 2) ||
                     (props.user.version % 2 === 0 && props.exNum === 1)
-                )) || props.attempt >= 3) && <Button variant="success" onClick={props.onSuccess}>Close</Button>}
-                {props.syntaxErrors.length > 0 && <Button variant="success" onClick={props.onFailure}>Close</Button>}
+                ))) && !props.noNames && <Button variant="success" onClick={props.onSuccess}>Close</Button>}
+                {(props.syntaxErrors.length > 0 || props.noNames) && <Button variant="success" onClick={props.onFailure}>Close</Button>}
             </Modal.Footer>
         </Modal>
     )

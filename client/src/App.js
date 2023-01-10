@@ -79,23 +79,25 @@ function App() {
                 <>
                   {mode === "" &&
                     <>
-                      <Col xs={6}>
-                        <Button variant="outline-dark" onClick={() => {
-                          API.addTimestamp(user.id, 1)
-                          setMode("ex1")
-                        }} disabled={timeout1}>
-                          Exercise 1</Button>
-                      </Col>
-                      <Col xs={6}>
-                        <Button variant="outline-dark" onClick={() => {
-                          API.addTimestamp(user.id, 2)
-                          setMode("ex2")
-                        }} disabled={timeout2} >
-                          Exercise 2</Button>
-                      </Col>
+                      <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh', }}>
+                        <Col xs={6}>
+                          <Button variant="outline-dark" onClick={() => {
+                            API.addTimestamp(user.id, 1)
+                            setMode("ex1")
+                          }} disabled={timeout1}>
+                            Exercise 1</Button>
+                        </Col>
+                        <Col xs={6}>
+                          <Button variant="outline-dark" onClick={() => {
+                            API.addTimestamp(user.id, 2)
+                            setMode("ex2")
+                          }} disabled={timeout2} >
+                            Exercise 2</Button>
+                        </Col>
+                      </Container>
                     </>}
-                  {mode === "ex1" && <Exercise user={user} exNum={1}></Exercise>}
-                  {mode === "ex2" && <Exercise user={user} exNum={2}></Exercise>}
+                  {mode === "ex1" && <Exercise user={user} exNum={1} setMode={setMode}></Exercise>}
+                  {mode === "ex2" && <Exercise user={user} exNum={2} setMode={setMode}></Exercise>}
                   {mode === "admin" && <AdminPage user={user}></AdminPage>}
                 </>
                 : <Navigate to="/login" />

@@ -32,6 +32,7 @@ function Exercise(props) {
 
     const reduceGrade = (penalty) => {
         let newGrade = grade - penalty
+        if (newGrade < 0) newGrade = 0
         setGrade(newGrade)
     }
 
@@ -174,7 +175,7 @@ function Exercise(props) {
                         userProgress={userProgress} setUserProgress={setUserProgress} user={props.user}
                         modifiedDiagram={modifiedDiagram} setModifiedDiagram={setModifiedDiagram} tutorial={props.tutorial}
                         respectedRules={respectedRules} setRespectedRules={setRespectedRules} userRules={userRules} setUserRules={setUserRules}
-                        score={score} setScore={setScore} grade={grade} reduceGrade={reduceGrade} setUnlockedRules={updateUnlockedRules} exNum={props.exNum} />
+                        score={score} setScore={setScore} grade={grade} reduceGrade={reduceGrade} setUnlockedRules={updateUnlockedRules} exNum={props.exNum} setMode={props.setMode} />
                 </Row>
             </Col>
         </Row>
