@@ -1,0 +1,327 @@
+
+GET http://localhost:3001/api/diagram/resources/starter
+
+### Exercise related APIs ###
+
+GET http://localhost:3001/api/exercise/1/1
+
+###
+
+GET http://localhost:3001/api/exercises
+
+###
+
+POST http://localhost:3001/api/exercise
+Content-Type: application/json
+
+{"part": 1,
+"place": 1, 
+"title": "Send an email", 
+"XP": 100,
+"rewards": 1,
+"diagram": "diagram", 
+"description": "Lets create your first model.\nIn this exercise you will create a simple process for sending an email.\nYour process should consist of:\n\t- A start event\n\t- A task for writing the email\n\t- A task for sending the email\n\t- An end event",
+"rules": "{\"StartEvent\":1,\"Task\":1,\"SendTask\":1,\"EndEvent\":1,\"Target_StartEvent\":\"Task\",\"Target_Task\":\"SendTask\",\"Target_SendTask\":\"EndEvent\"}"}
+
+###
+POST http://localhost:3001/api/exercise
+Content-Type: application/json
+
+{"part": 1,
+"place": 2, 
+"title": "Choose your lunch", 
+"XP": 200,
+"rewards": 2,
+"diagram": "diagram", 
+"description": "Now you need to decide what you're having for lunch. You have two options, pizza or pasta.\nCreate a process with a gateway representing your lunch options, each followed by a task to prepare your lunch. Then combine the two branches allow you to eat your lunch.\nYour process should consist of:\n - A start event\n - An exclusive gateway\n - 2 tasks representing the preparation of each your lunch options\n - 1 task to eat your lunch\n - An end event",
+"rules": "{\"StartEvent\":1,\"Task\":3,\"EndEvent\":1,\"ExclusiveGateway\":2}"}
+
+
+###
+
+POST http://localhost:3001/api/exercise
+Content-Type: application/json
+
+{"part": 2,
+"place": 1, 
+"title": "Order dessert", 
+"diagram": "diagram", 
+"XP": 200,
+"rewards": 2,
+"description": "Now that you've finished lunch you're craving a gelato, but you have none at home so you order one from your local gelateria.\n\nComplete the given diagram by adding a process to the gelateria which responds to the “Order gelato” task, by preparing the gelato and then delivering it. \nTo complete this exercise you will need to add:\n - A message start event\n - A task for preparing the gelato\n - A task for delivering the gelato\n - A terminate end event\n - A message flow from the “Order gelato” task and another to the “Received delivery” intermediate event.",
+"rules": "{\"StartEvent\":1,\"Task\":1,\"SendTask\":1,\"EndEvent\":1}"}
+
+###
+
+POST http://localhost:3001/api/exercise
+Content-Type: application/json
+
+{"part": 2,
+"place": 2, 
+"title": "Phone a friend", 
+"diagram": "diagram", 
+"XP": 100,
+"rewards": 1,
+"description": "You're thinking about adopting a cat and you'd like your friend's opinion. Unfortunately they accidentally threw their phone into a river yesterday and are now using a temporary number.\n\nCreate a process with a task for calling your friend, attaching an error event for when you can't reach your friend because you've called the wrong number.\nYour process should consist of:\n - A start event\n - A task for calling you friend\n - An end boundary event\n - A task for the error\n - 2 end events, one for success and one for failure.",
+"rules": "{\"StartEvent\":1,\"Task\":2,\"ErrorBoundary\":1,\"EndEvent\":1}"}
+
+###
+
+POST http://localhost:3001/api/exercise
+Content-Type: application/json
+
+{"part": 3,
+"place": 1, 
+"title": "You've got followers!", 
+"diagram": "followers", 
+"XP": 200,
+"rewards": 2,
+"description": "You have a few followers who are interested in seeing and commenting on photos of your holidays. You recently went on holiday and have a photo you'd like to share with your follows.\n\nConstruct a process for choosing a photo to publish and attach a signal event to let your followers know about the publication.\nYour process should consist of:\n - A start event\n - A task for choosing a photo\n - A task for publishing the photo\n - A signal throw event\n - An end event",
+"rules": "{\"StartEvent\":3,\"Task\":6,\"IntermediateThrowEvent\":1,\"EndEvent\":3,\"Definition_IntermediateThrowEvent\":\"SignalEventDefinition\",\"Target_IntermediateThrowEvent\":\"EndEven\",\"Target_Task\":\"IntermediateThrowEvent\"}"}
+
+###
+
+POST http://localhost:3001/api/exercise
+Content-Type: application/json
+
+{"part": 3,
+"place": 2, 
+"title": "Cookie time.", 
+"diagram": "diagram", 
+"XP": 300,
+"rewards": 3,
+"description": "You really really really want to eat some cookies, but you have none. So let's bake some!\n\nCreate process for baking some cookies. Your process will involve: collecting ingredients; then preparing the dough while the over is preheating; putting the cookies in the oven then waiting for them to bake; taking the cookies out of the oven then waiting for them to cool.\nYour process should consist of:\n - A start event\n - A task for collecting ingredients\n - A parallel gateway with two tasks, one for preheating the oven and one for preparing the dough\n - A task for putting the cookies in the oven\n - A timer event for the baking\n - A task for taking the cookies out of the oven\n - A timer event for waiting for the cookies to cool\n - An end event to finally eat your cookies",
+"rules": "{\"StartEvent\":1,\"Task\":5,\"ParallelGateway\":2,\"IntermediateCatchEvent\":2,\"EndEvent\":1,\"Definition_IntermediateCatchEvent\":\"TimerEventDefinition\",\"Target_IntermediateCatchEvent\":\"Task\",\"Target_IntermediateCatchEvent_2\":\"EndEvent\"}"}
+
+###
+
+PUT http://localhost:3001/api/exercise/1/1
+Content-Type: application/json
+
+{"title": "Send an email", 
+"diagram": "diagram", 
+"XP": 200,
+"rewards": 2,
+"description": "Lets create your first model.\n\nIn this exercise you will create a simple process for sending an email.\n\nYour process should consist of:\n<ul><li>A start event<li>A task for writing the email<li>A task for sending the email<li>An end event</ul>",
+"rules": "{\"StartEvent\":1,\"Task\":1,\"SendTask\":1,\"EndEvent\":1,\"Target_StartEvent\":\"Task\",\"Target_Task\":\"SendTask\",\"Target_SendTask\":\"EndEvent\"}"}
+
+###
+
+PUT http://localhost:3001/api/exercise/2/1
+Content-Type: application/json
+
+{"title": "Choose your lunch", 
+"diagram": "diagram", 
+"XP": 100,
+"rewards": 2,
+"description": "Now you need to decide what you're having for lunch. You have two options, pizza or pasta.\n\nCreate a process with a gateway representing your lunch options, each followed by a task to prepare your lunch. Then combine the two branches to allow you to eat your lunch.\n\nYour process should consist of:<ul><li>A start event<li>An exclusive gateway<li>2 tasks representing the preparation of each your lunch options<li>1 task to eat your lunch<li>An end event",
+"rules": "{\"StartEvent\":1,\"Task\":3,\"EndEvent\":1,\"ExclusiveGateway\":2,\"Target_StartEvent\":\"ExclusiveGateway\",\"Target_ExclusiveGateway\":\"Task\",\"Outgoing_ExclusiveGateway\":2,\"Incoming_ExclusiveGateway\":2}"}
+
+###
+
+PUT http://localhost:3001/api/exercise/2/2
+Content-Type: application/json
+
+{"title": "Order dessert", 
+"diagram": "dessert", 
+"XP": 200,
+"rewards": 3,
+"description": "Now that you've finished lunch you're craving a gelato, but you have none at home so you order one from your local gelateria.\n\nComplete the given diagram by adding a process to the gelateria which responds to the “Order gelato” task, by preparing the gelato and then delivering it.\n\nTo complete this exercise you will need to add:<ul><li>A message start event<li>A task for preparing the gelato<li>A task for delivering the gelato<li>A terminate end event<li>A message flow connection from the “Order gelato” task to the gelateria, and another from the gelateria to the “Received delivery” intermediate event.",
+"rules": "{\"StartEvent\":2,\"Task\":4,\"EndEvent\":2,\"Definition_StartEvent\":\"MessageEventDefinition\",\"MessageFlow_Task\":\"StartEvent\",\"MessageFlow_Task_2\":\"IntermediateCatchEvent\",\"Definition_EndEvent\":\"TerminateEventDefinition\"}"}
+
+###
+
+PUT http://localhost:3001/api/exercise/1/2
+Content-Type: application/json
+
+{"title": "Phone a friend", 
+"diagram": "diagram", 
+"XP": 150,
+"rewards": 1,
+"description": "You're thinking about adopting a cat and you'd like your friend's opinion. Unfortunately they accidentally threw their phone into a river yesterday and are now using a temporary number.\n\nCreate a process with a task for calling your friend, attaching an error event for when you can't reach your friend because you've called the wrong number.\nYour process should consist of:\n - A start event\n - A task for calling you friend\n - An error boundary event\n - A task for the error\n - 2 end events, one for success and one for failure.",
+"rules": "{\"StartEvent\":1,\"Task\":2,\"BoundaryEvent\":1,\"EndEvent\":2,\"Definition_EndEvent\":\"ErrorEventDefinition\",\"Definition_BoundaryEvent\":\"ErrorEventDefinition\"}"}
+
+###
+
+PUT http://localhost:3001/api/exercise/3/1
+Content-Type: application/json
+
+{"title": "You've got followers!", 
+"diagram": "followers", 
+"XP": 250,
+"rewards": 2,
+"description": "You have a few followers who are interested in seeing and commenting on photos of your holidays. You recently went on holiday and have a photo you'd like to share with your follows.\n\nConstruct a process for choosing a photo to publish and attach a signal event to let your followers know about the publication.\nYour process should consist of:\n - A start event\n - A task for choosing a photo\n - A task for publishing the photo\n - A signal throw event\n - An end event",
+"rules": "{\"StartEvent\":3,\"Task\":6,\"IntermediateThrowEvent\":1,\"EndEvent\":3,\"Definition_IntermediateThrowEvent\":\"SignalEventDefinition\",\"Target_IntermediateThrowEvent\":\"EndEvent\",\"Target_Task\":\"IntermediateThrowEvent\"}"}
+
+###
+
+PUT http://localhost:3001/api/exercise/3/2
+Content-Type: application/json
+
+{"title": "Cookie time", 
+"diagram": "diagram", 
+"XP": 300,
+"rewards": 3,
+"description": "You really really really want to eat some cookies, but you have none. So let's bake some!\n\nCreate a process for baking some cookies. Your process will involve: collecting ingredients; then preparing the dough while the oven is preheating; putting the cookies in the oven then waiting for them to bake; taking the cookies out of the oven then waiting for them to cool.\nYour process should consist of:\n - A start event\n - A task for collecting ingredients\n - A parallel gateway with two tasks, one for preheating the oven and one for preparing the dough\n - A task for putting the cookies in the oven\n - A timer event for the baking\n - A task for taking the cookies out of the oven\n - A timer event for waiting for the cookies to cool\n - An end event to finally eat your cookies",
+"rules": "{\"StartEvent\":1,\"Task\":5,\"ParallelGateway\":2,\"IntermediateCatchEvent\":2,\"EndEvent\":1,\"Definition_IntermediateCatchEvent\":\"TimerEventDefinition\",\"Target_IntermediateCatchEvent\":\"Task\",\"Target_IntermediateCatchEvent_2\":\"EndEvent\"}"}
+
+### Progress related APIs ###
+
+GET http://localhost:3001/api/progress/1
+
+###
+
+PUT http://localhost:3001/api/progress/3
+Content-Type: application/json
+
+{"tutorial": "{\"1\":[1]}", "competition": 	"{\"2\":[1,2]}", "rewards": "{\"3\":[1]}"}
+
+###
+
+GET http://localhost:3001/api/progresses
+
+### User related APIs ###
+
+GET http://localhost:3001/api/users
+
+###
+
+
+GET http://localhost:3001/api/user/1
+
+###
+
+
+PUT http://localhost:3001/api/user/1
+Content-Type: application/json
+
+{"avatar": "resources/giraffe.svg"}
+
+###
+
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "kylie.bedwell@gmail.com",
+"name": "Kylie B", 
+"hash": "$2a$12$uVFFaW874clY5zvPBhhznOD2EF4E9nkHHoMAgLnNvHUrmlp7UEhLq"}
+
+###
+
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "mario.rossi@studenti.polito.it",
+"name": "Mario R", 
+"hash": "$2a$12$RaSRoN66J0CT06/vKb1z1e5OjqjE5Cf8m14l9wURiuNC9F8/IZP9m"}
+
+###
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "tommaso.f@polito.it",
+"name": "Tommaso F", 
+"hash": "$2a$12$DI.wYQFjEuiviEtWJxyuXexUpzpuh4GyASdFcloadGA9AOMkoY/qW"}
+
+###
+
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "takla.t@polito.it",
+"name": "Takla T", 
+"hash": "$2a$12$HSNklVE6JpYoMP32lKSZE.GgCJuq3oyyu/sxONIhMpb94idkFV35C"}
+
+###
+
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "alessio.s@polito.it",
+"name": "Alessio S", 
+"hash": "$2a$12$KE10x4nzMw7e2LYVm.5oz.oQBT/xEQo4Vuqw10f1NKF7z6FfTYWZ2"}
+
+###
+
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "marta.c@polito.it",
+"name": "Marta C", 
+"hash": "$2a$12$LJmuIrn0U.hmh1ozYzFJJ.khs1uyrf8vu4PObnDEUu6mwRrNz2d4C"}
+
+###
+
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "mostafa.a@polito.it",
+"name": "Mostafa A", 
+"hash": "$2a$12$EBNNDnEYfujP.RJRFVrgI.NKFqzrJ50ajWdmsAuitms3OrmfPmM.W"}
+
+
+###
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "lorenzo.a@polito.it",
+"name": "Lorenzo A", 
+"hash": "$2a$12$7gOtC6brQxjznkqZkZXD3elWeBCs7ZoMKxj73wA67uHmWD.SYrDZa"}
+
+###
+
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "sarah.c@polito.it",
+"name": "Sarah C", 
+"hash": "$2a$12$lxqZv8WFVJGtzZ4gb8onHeQjB2pFv.LnMf0jgjDxtgznvuMBwW3yW"}
+
+###
+
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "nicola.v@polito.it",
+"name": "Nicola V", 
+"hash": "$2a$12$i.L.zimjxtaUXsribstndO7tuXGO.YHq4i44yGhtXKWQE9CGy2SBC"}
+
+###
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "adriana.h@polito.it",
+"name": "Adriana H", 
+"hash": "$2a$12$zkoqD4wQY1Df7nOr4jLtUuZK5Ziexs8QghVJK25UkF8.xRkLXL2Ei"}
+
+###
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "shantal.f@polito.it",
+"name": "Shantal F", 
+"hash": "$2a$12$zcR1HaPNMd2NwRr5ufnsO.fWQv1Wysm6hV9ZiXgOsBnIW23oBKCZe"}
+
+###
+
+
+POST http://localhost:3001/api/user
+Content-Type: application/json
+
+{"email": "tommaso.n@polito.it",
+"name": "Tommaso N", 
+"hash": "$2a$12$VmSI7dni2VkVCLT0h0LnVemugyN46ixNLZwM80Jiel8OIp7vFLMxC"}
+
+###

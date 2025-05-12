@@ -1,0 +1,7 @@
+{
+  "extends": "bpmnlint:recommended",
+  "rules":{
+    "label-required": "warn",
+    "superfluous-gateway": "error"
+  }
+}

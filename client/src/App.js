@@ -79,7 +79,7 @@ function App() {
                 <>
                   {mode === "" &&
                     <>
-                      <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh', }}>
+                      <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', }}>
                         <Col xs={6}>
                           <Button variant="outline-dark" onClick={() => {
                             API.addTimestamp(user.id, 1)
